@@ -1,9 +1,10 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.io import loadmat
 from scipy.signal import find_peaks
 import sys
-import math
+import matplotlib
+matplotlib.use('qtagg')
+import matplotlib.pyplot as plt
 
 def drawing_hppc_charts(file_path):
     """
