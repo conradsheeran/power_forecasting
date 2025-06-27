@@ -7,13 +7,10 @@ import math
 
 def drawing_hppc_charts(file_path):
     """
-    分析HPPC（混合脉冲功率特性）测试数据文件。
+        绘制 HPPC 功率曲线
 
-    该函数会加载指定的.mat文件，识别功率脉冲，计算每个脉冲的响应时间，
-    并在控制台打印详细分析结果，最后生成一个可视化的功率曲线图。
-
-    参数:
-        file_path (str): 要分析的 .mat 文件的完整或相对路径。
+        参数:
+            file_path (str): .mat 文件路径
     """
     print("\n" + "="*70)
     print(f"开始分析文件: {file_path}")
