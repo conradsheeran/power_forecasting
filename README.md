@@ -13,9 +13,11 @@ conda activate power_forecasting
 |-- LICENSE
 |-- README.md
 |-- data                   # 数据目录
+|       `-- Panasonic 18650PF Data
 |-- env.yml                # 环境配置文件
 |-- src                    # 源代码目录
 |       `-- main.py
+         -- lithium_hppc_data_processing.py
 `-- tmp                    # 临时文件目录
         `-- tmp.py
 ```
