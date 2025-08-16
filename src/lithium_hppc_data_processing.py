@@ -5,6 +5,7 @@ import sys
 import matplotlib
 matplotlib.use("qtagg")
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
 
 class DataLoader:
     def __init__(self, file_path: str):
@@ -38,6 +39,7 @@ class DataLoader:
         power_vec = np.abs(data["Power"][0, 0].flatten())  # 取功率绝对值
 
         return time_vec, power_vec
+
 
 def plot_hppc(time_vec, power_vec):
     """
@@ -98,16 +100,16 @@ def plot_hppc(time_vec, power_vec):
             markersize=5, markerfacecolor="red", markeredgecolor="black",
             linestyle="None", label="检测到的脉冲峰值")  # 峰值点
 
-    plt.rcParams["font.sans-serif"] = ["SimHei", "Heiti TC", "sans-serif"]
-    plt.rcParams["axes.unicode_minus"] = False
+    font = FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
+    plt.rcParams["axes.unicode_minus"] = False  # 负号
 
-    ax.set_title("HPPC 功率曲线", fontsize=12)
-    ax.set_xlabel("时间 (s)", fontsize=10)
-    ax.set_ylabel("功率 (w)", fontsize=10)
+    ax.set_title("HPPC 功率曲线", fontsize=12, fontproperties=font)
+    ax.set_xlabel("时间 (s)", fontsize=10, fontproperties=font)
+    ax.set_ylabel("功率 (w)", fontsize=10, fontproperties=font)
     ax.grid(True)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
-    ax.legend(loc="upper left")
+    ax.legend(loc="upper left", prop=font)
 
     plt.tight_layout()
     plt.show()
